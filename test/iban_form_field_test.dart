@@ -9,6 +9,7 @@ void main() {
         home: Scaffold(
           body: IbanFormField(
             initialValue: Iban('NL'),
+            inputDecoration: InputDecoration(),
           ),
         ),
       ),

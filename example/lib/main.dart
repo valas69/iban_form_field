@@ -38,6 +38,9 @@ class _ExampleState extends State<Example> {
               Form(
                 key: _formKey,
                 child: IbanFormField(
+                  textStyle: TextStyle(color: Colors.red),
+                  inputDecoration: InputDecoration(
+                      hintStyle: TextStyle(color: Colors.black)),
                   onSaved: (iban) => _iban = iban,
                   initialValue: Iban('NL'),
                   autofocus: true,
@@ -49,7 +52,7 @@ class _ExampleState extends State<Example> {
                   },
                 ),
               ),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () {
                   if (!_formKey.currentState.validate()) {
                     return;
