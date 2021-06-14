@@ -8,7 +8,7 @@ void main() {
       MaterialApp(
         home: Scaffold(
           body: IbanFormField(
-            initialValue: Iban('NL'),
+            initialValue: Iban(countryCode: 'NL'),
             inputDecoration: InputDecoration(),
           ),
         ),

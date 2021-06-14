@@ -4,7 +4,7 @@ import 'package:iban_form_field/iban_form_field.dart';
 
 void main() {
   test('electronicFormat', () {
-    var iban = Iban('NL')
+    var iban = Iban(countryCode: 'NL')
       ..checkDigits = '80'
       ..basicBankAccountNumber = 'INGB 7569 0064 53';
 
@@ -12,7 +12,7 @@ void main() {
   });
 
   test('toPrintFormat', () {
-    var iban = Iban('NL')
+    var iban = Iban(countryCode: 'NL')
       ..checkDigits = '80'
       ..basicBankAccountNumber = 'INGB7569006453';
 
@@ -20,19 +20,19 @@ void main() {
   });
 
   test('hintText without a valid countryCode', () {
-    var iban = Iban('');
+    var iban = Iban(countryCode: '');
 
     expect(iban.countryCodeHintText, 'CH');
     expect(iban.checkDigitsHintText, '93');
     expect(iban.basicBankAccountNumberHintText, '0076 2011 6238 5295 7');
 
-    iban = Iban('C');
+    iban = Iban(countryCode: 'C');
 
     expect(iban.countryCodeHintText, 'CH');
     expect(iban.checkDigitsHintText, '93');
     expect(iban.basicBankAccountNumberHintText, '0076 2011 6238 5295 7');
 
-    iban = Iban('QQ');
+    iban = Iban(countryCode: 'QQ');
 
     expect(iban.countryCodeHintText, 'CH');
     expect(iban.checkDigitsHintText, '93');

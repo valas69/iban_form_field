@@ -28,6 +28,7 @@ class _ExampleState extends State<Example> {
 
   @override
   Widget build(BuildContext context) {
+    Iban ibann = Iban.fromString("FR76 3000 1007 9412 3456 7890 185");
     return Scaffold(
       body: Center(
         child: Padding(
@@ -42,7 +43,7 @@ class _ExampleState extends State<Example> {
                   inputDecoration: InputDecoration(
                       hintStyle: TextStyle(color: Colors.black)),
                   onSaved: (iban) => _iban = iban,
-                  initialValue: Iban('NL'),
+                  initialValue: ibann,
                   autofocus: true,
                   validator: (iban) {
                     if (!iban.isValid) {

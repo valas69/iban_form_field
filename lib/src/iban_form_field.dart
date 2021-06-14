@@ -18,7 +18,7 @@ class IbanFormField extends FormField<Iban> {
           key: key,
           onSaved: onSaved,
           validator: validator,
-          initialValue: initialValue ?? Iban(''),
+          initialValue: initialValue ?? Iban(countryCode: ''),
           builder: (state) {
             return IbanFormFieldBuilder(
                 state, autofocus, inputDecoration, textStyle);

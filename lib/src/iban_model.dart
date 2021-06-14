@@ -1,7 +1,7 @@
 import 'package:iban/iban.dart' as iban;
 
 class Iban {
-  Iban(this.countryCode);
+  Iban({this.countryCode, this.checkDigits, this.basicBankAccountNumber});
 
   String countryCode;
   String checkDigits;
@@ -34,6 +34,13 @@ class Iban {
       particularSpecification = iban.specifications[countryCode];
     }
     return particularSpecification.example;
+  }
+
+  factory Iban.fromString(String ibanString) {
+    return Iban(
+        countryCode: ibanString.substring(0, 2),
+        checkDigits: ibanString.substring(2, 4),
+        basicBankAccountNumber: ibanString.substring(4));
   }
 
   @override
